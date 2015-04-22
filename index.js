@@ -15,8 +15,8 @@ var uuid = require('node-uuid').v4;
  * @api public
  */
 
-module.exports = function(){
-  var header = 'request-id';
+module.exports = function(header){
+  header = header || 'request-id';
   
   return function*(next){
     this.id = this.query[header]
